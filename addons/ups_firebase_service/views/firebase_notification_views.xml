@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!--NOTIFICATION ROOT VIEW -->
+    <record model="ir.actions.act_window" id="ups_firebase_service.notification_action_window">
+        <field name="name">Notificaciones</field>
+        <field name="res_model">firebase.notification</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Administrar notificaciones.
+            </p>
+        </field>
+    </record>
+
+    <!-- firebase.notification tree view -->
+    <record id="ups_firebase_service.firebase_notification_view_tree" model="ir.ui.view">
+        <field name="name">firebase.notification.view.tree</field>
+        <field name="model">firebase.notification</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id" />
+                <field name="title" />
+                <field name="user_id" />
+            </tree>
+        </field>
+    </record>
+    <!-- firebase.notification field view -->
+    <record id="ups_firebase_service.firebase_notification_view_form" model="ir.ui.view">
+        <field name="name">firebase.notification.view.tree</field>
+        <field name="model">firebase.notification</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                </header>
+                <sheet name="tipo_form">
+                    <div class="oe_title">
+                        <label for="title" />
+                        <h1>
+                            <field name="title" />
+                        </h1>
+                    </div>
+                    <label for="message" />
+                    <field name="message" />
+                    <div></div>
+                    <label for="user_id" />
+                    <field name="user_id" />
+                    <div></div>
+                    <button name="send_notification" string="Send Notification" type="object"
+                        class="oe_highlight" />
+                    <button string="Cancel" special="cancel" />
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- TOKENS VIEW -->
+    <record model="ir.actions.act_window" id="ups_firebase_service.token_action_window">
+        <field name="name">tokens</field>
+        <field name="res_model">token.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Administrar Tokens.
+            </p>
+        </field>
+    </record>
+    <!-- firebase.token tree view -->
+    <record id="ups_firebase_service.firebase_token_view_tree" model="ir.ui.view">
+        <field name="name">firebase.token.view.tree</field>
+        <field name="model">token.partner</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id" />
+                <field name="partner_id" />
+                <field name="token" />
+                <field name="device_name"/>
+            </tree>
+        </field>
+    </record>
+    <!-- forenase.token from view -->
+    <record id="ups_firebase_service.firebase_token_view_form" model="ir.ui.view">
+        <field name="name">firebase.token.view.form</field>
+        <field name="model">token.partner</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <label for="partner_id" />
+                    <field name="partner_id" />
+                    <div></div>
+                    <label for="token" />
+                    <field name="token" />
+                    <div></div>
+                    <label for="device_name"/>
+                    <field name="device_name"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- MASS GROUP VIEW-->
+
+    <record model="ir.actions.act_window" id="ups_firebase_service.mass_group_action_window">
+        <field name="name">Grupos Notificaciones</field>
+        <field name="res_model">mass.notification</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Administrar Grupos.
+            </p>
+        </field>
+    </record>
+
+    <record id="ups_firebase_service.firebase_group_view_tree" model="ir.ui.view">
+        <field name="name">firebase.token.view.tree</field>
+        <field name="model">mass.notification</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id" />
+                <field name="group_name" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="ups_firebase_service.firebase_group_view_form" model="ir.ui.view">
+        <field name="name">firebase.token.view.form</field>
+        <field name="model">mass.notification</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <header>
+                    </header>
+                    <label for="group_name" />
+                    <field name="group_name" />
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- FIREBASE NOTIFICATION GROUP VIEW -->
+
+    <record model="ir.actions.act_window"
+        id="ups_firebase_service.notification_grupal_action_window">
+        <field name="name">Notificaciones</field>
+        <field name="res_model">firebase.notification.grupal</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Administrar notificaciones.
+            </p>
+        </field>
+    </record>
+
+    <!-- firebase.notification tree view -->
+    <record id="ups_firebase_service.firebase_notification_grupal_view_tree" model="ir.ui.view">
+        <field name="name">firebase.notification.view.tree</field>
+        <field name="model">firebase.notification.grupal</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id" />
+                <field name="title" />
+                <field name="group_id" />
+            </tree>
+        </field>
+    </record>
+    <!-- firebase.notification field view -->
+    <record id="ups_firebase_service.firebase_notification_grupal_view_form" model="ir.ui.view">
+        <field name="name">firebase.notification.view.tree</field>
+        <field name="model">firebase.notification.grupal</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                </header>
+                <sheet name="tipo_form">
+                    <div class="oe_title">
+                        <label for="title" />
+                        <h1>
+                            <field name="title" />
+                        </h1>
+                    </div>
+                    <label for="message" />
+                    <field name="message" />
+                    <div></div>
+                    <label for="group_id" />
+                    <field name="group_id" />
+                    <div></div>
+                    <button name="send_notification" string="Send Notification" type="object"
+                        class="oe_highlight" />
+                    <button string="Cancel" special="cancel" />
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+    <menuitem id="ups_firebase_service.menu_root" name="UPS notificaciones" sequence="16" />
+    <menuitem name="Notificaciones" id="ups_firebase_service.menu_1"
+        parent="ups_firebase_service.menu_root"
+        action="ups_firebase_service.notification_action_window" />
+    <menuitem name="Notificaciones Grupales" id="ups_firebase_service.menu_2"
+        parent="ups_firebase_service.menu_root"
+        action="ups_firebase_service.notification_grupal_action_window" />
+    <menuitem name="Tokens" id="ups_firebase_service.menu_3"
+        parent="ups_firebase_service.menu_root"
+        action="ups_firebase_service.token_action_window" />
+    <menuitem name="Grupos" id="ups_firebase_service.menu_4"
+        parent="ups_firebase_service.menu_root"
+        action="ups_firebase_service.mass_group_action_window" />
+
+</odoo>

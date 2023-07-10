@@ -1,0 +1,20 @@
+<!-- Archivo: partner_inherit_views.xml -->
+
+<odoo>
+    <data>
+        <!-- Vista personalizada para extender el formulario de res.partner -->
+        <record id="view_partner_inherit_form" model="ir.ui.view">
+            <field name="name">res.partner.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <!-- Corregir la expresión XPath para encontrar el lugar adecuado -->
+                <xpath expr="//field[@name='category_id']" position="after">
+                    <group>
+                        <field name="group_mass_notification"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+ups_firebase_service.access_firebase_notification,access_firebase_notification,ups_firebase_service.model_firebase_notification,base.group_user,1,1,1,1
+ups_firebase_service.access_token_partner,access_token_partner,ups_firebase_service.model_token_partner,base.group_user,1,1,1,1
+ups_firebase_service.access_mass_notification,access_mass_notification,ups_firebase_service.model_mass_notification,base.group_user,1,1,1,1
+ups_firebase_service.access_firebase_notification_grupal,access_firebase_notification_grupal,ups_firebase_service.model_firebase_notification_grupal,base.group_user,1,1,1,1
